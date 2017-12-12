@@ -1,9 +1,12 @@
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
+
+import markdown
 
 
 # List of posts on homepage
@@ -20,6 +23,7 @@ def post_draft_list(request):
 # Detailed page for a post
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
+    post.text = markdown.markdown(post.text, extensions=['markdown.extensions.codehilite'])
     return render(request, 'blog/post_detail.html', {'post': post})
 
 # Form to add a new post
