@@ -3,6 +3,7 @@
 {% block content %}
   <!-- Posts -->
   {% for post in posts %}
+    <link rel="stylesheet" type="text/css" href="blog/code.css">
     <div class="post">
       <h1>
         <a href="{% url 'post_detail' post_id=post.pk %}">{{ post.title }}</a>
@@ -11,7 +12,7 @@
         <i class="material-icons">person</i>
         {{ post.author }}
       </p>
-      <p>{{ post.text | truncatewords:50 }}</p>
+      <p>{{ post.text | safe | truncatewords:50 }}</p>
       <div class="row">
         <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 post-stat" name="date">
           <i class="material-icons">event_available</i>

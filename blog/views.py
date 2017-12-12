@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.db.models.query import QuerySet
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
@@ -12,6 +13,8 @@ import markdown
 # List of posts on homepage
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    for i in range(len(posts)):
+        posts[i].text = markdown.markdown(posts[i].text)
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 # List of unpublished posts (drafts)
