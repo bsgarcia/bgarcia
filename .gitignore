@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+envr
+db.sqlite3
+/static
+*.txt
