@@ -25,11 +25,11 @@ COMMANDS = [
 
 COLOR_DESCRIPTION = "\033[1m\033[96m"
 COMMAND_DESCRIPTION = [
-    "creating virtualenv for this blog...",
-    "activating virtualenv...",
-    "installing deps...",
-    "migrating blog...",
-    "creating superuser. you will be asked superuser name and password."
+    "Creating virtualenv for this blog...",
+    "Activating virtualenv...",
+    "Installing deps...",
+    "Migrating blog...",
+    "Creating superuser. You will be asked superuser name and password."
 ]
 
 HOME_DIR = os.path.expanduser("~")
@@ -50,11 +50,11 @@ for description, command in zip(COMMAND_DESCRIPTION, COMMANDS):
     print(COLOR_DESCRIPTION + description + COLOR_NORMAL)
     call(command.split())
 
-print(COLOR_DESCRIPTION + "updating wsgi file...")
+print(COLOR_DESCRIPTION + "Updating wsgi file...")
 with open("/var/www/{0}_pythonanywhere_com_wsgi.py", "w") as f:
     f.write(WSGI_FILE.format(HOME_DIR + "/django-markdown-blog"))
 
-print(COLOR_DESCRIPTION + "use this when you are setting web in pythonanywhere." + COLOR_NORMAL)
+print(COLOR_DESCRIPTION + "Use this when you are setting web in pythonanywhere." + COLOR_NORMAL)
 print("source code: {0}".format(HOME_DIR + "/django-markdown-blog"))
 print("working directoty: {0}".format(HOME_DIR))
 print("virtualenv: {0}".format(HOME_DIR + "/django-markdown-blog/venv"))
