@@ -7,6 +7,7 @@ django-markdown-blog installer.
 
 
 from subprocess import call
+import importlib
 import getpass
 import os
 
@@ -14,7 +15,7 @@ import os
 COLOR_NORMAL = "\033[0m"
 COMMANDS = [
     "virtualenv -p python3 venv",
-    "source venv/bin/activate",
+    "true"
     "pip install -r requirements.txt",
     "python manage.py migrate",
     "python manage.py createsuperuser",
@@ -49,6 +50,9 @@ application = StaticFilesHandler(get_wsgi_application())'''
 for description, command in zip(COMMAND_DESCRIPTION, COMMANDS):
     print(COLOR_DESCRIPTION + description + COLOR_NORMAL)
     call(command.split())
+    if command == "true":
+        activate_this_file = "venv/bin/activate_this.py"
+        importlib.reload(activate_this_file)
 
 print(COLOR_DESCRIPTION + "Updating wsgi file...")
 with open("/var/www/{0}_pythonanywhere_com_wsgi.py", "w") as f:
