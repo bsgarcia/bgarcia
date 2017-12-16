@@ -7,7 +7,7 @@ django-markdown-blog installer.
 
 
 from subprocess import call
-import importlib
+import importlib.util
 import getpass
 import os
 
@@ -52,7 +52,8 @@ for description, command in zip(COMMAND_DESCRIPTION, COMMANDS):
     call(command.split())
     if command == "true":
         activate_this_file = "venv/bin/activate_this.py"
-        import activate_this_file
+        spec = importlib.util.spec_from_file_location("activate_this", activate_this_file)
+        spec.loader.exec_module(importlib.util.module_from_spec(spec))
 
 print(COLOR_DESCRIPTION + "Updating wsgi file...")
 with open("/var/www/{0}_pythonanywhere_com_wsgi.py", "w") as f:
