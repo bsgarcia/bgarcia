@@ -8,6 +8,7 @@ Markdown blog powered by django.
 
 ```
 git clone https://github.com/sohnryang/django-markdown-blog
+cd django-markdown-blog
 ./install.py
 ```
 
