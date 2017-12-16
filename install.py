@@ -52,7 +52,7 @@ for description, command in zip(COMMAND_DESCRIPTION, COMMANDS):
     call(command.split())
     if command == "true":
         activate_this_file = "venv/bin/activate_this.py"
-        importlib.reload(activate_this_file)
+        import activate_this_file
 
 print(COLOR_DESCRIPTION + "Updating wsgi file...")
 with open("/var/www/{0}_pythonanywhere_com_wsgi.py", "w") as f:
