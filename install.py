@@ -15,7 +15,7 @@ import os
 COLOR_NORMAL = "\033[0m"
 COMMANDS = [
     "virtualenv -p python3 venv",
-    "true"
+    "true",
     "pip install -r requirements.txt",
     "python manage.py migrate",
     "python manage.py createsuperuser",
