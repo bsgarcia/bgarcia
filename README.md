@@ -12,7 +12,7 @@ cd django-markdown-blog
 ./install.py
 ```
 
-*Note: You will be asked username and password while executing the last command.*
+> *Note: You will be asked username and password while executing the last command.*
 
 2. Your last command will printed something like this.
 
