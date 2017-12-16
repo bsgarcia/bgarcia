@@ -11,6 +11,7 @@ import getpass
 import os
 
 
+COLOR_NORMAL = "\033[0m"
 COMMANDS = [
     "virtualenv -p python3 venv",
     "source venv/bin/activate",
@@ -46,14 +47,14 @@ from django.contrib.staticfiles.handlers import StaticFilesHandler
 application = StaticFilesHandler(get_wsgi_application())'''
 
 for description, command in zip(COMMAND_DESCRIPTION, COMMANDS):
-    print(COLOR_DESCRIPTION + description)
+    print(COLOR_DESCRIPTION + description + COLOR_NORMAL)
     call(command.split())
 
 print(COLOR_DESCRIPTION + "updating wsgi file...")
 with open("/var/www/{0}_pythonanywhere_com_wsgi.py", "w") as f:
     f.write(WSGI_FILE.format(HOME_DIR + "/django-markdown-blog"))
 
-print(COLOR_DESCRIPTION + "use this when you are setting web in pythonanywhere.")
+print(COLOR_DESCRIPTION + "use this when you are setting web in pythonanywhere." + COLOR_NORMAL)
 print("source code: {0}".format(HOME_DIR + "/django-markdown-blog"))
 print("working directoty: {0}".format(HOME_DIR))
 print("virtualenv: {0}".format(HOME_DIR + "/django-markdown-blog/venv"))
