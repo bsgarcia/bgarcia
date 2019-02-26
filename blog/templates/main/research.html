@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+    <h1>Research</h1>
+    My research focuses on...
+    {% include 'main/research_content.html' %}
+    <script>
+        {#$("#about").addClass("active")#}
+        document.getElementById("research").className += " active"
+    </script>
+{% endblock content %}

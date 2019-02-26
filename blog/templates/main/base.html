@@ -1,0 +1,73 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>B. Garcia</title>
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/code.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="wrapper">
+        <a class="site-title" href="{% url 'about' %}">
+            b. <strong>garcia</strong>
+        </a>
+        <nav class="site-nav">
+            <div class="trigger">
+                <a id="about" class="page-link" href="{% url 'about' %}">
+                    ABOUT</a>/
+                <a id="research" class="page-link" href="{% url 'research' %}">
+                    RESEARCH</a>/
+                <a class="page-link" href="https://github.com/getzneet/">
+                    CODING</a>/
+                <a id="blog" class="page-link" href="{% url 'post_list' %}">
+                    BLOG</a>/
+                <a id="research" class="page-link" href="{% url 'post_list' %}">
+                    RESOURCES</a>/
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="wrapper">
+    <div class="content">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <!-- Scripts -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.10.0/js/bootstrap-markdown.min.js"></script>
+    <!-- /Scripts -->
+</div>
+</body>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <div class="footer-col-wrapper">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Cc-sa.svg/30px-Cc-sa.svg.png"
+                 width="2%">
+            All contents are under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons
+            Attribution-ShareAlike 4.0 International License</a><br>
+            This a django website based on <a href="https://github.com/sohnryang/django-markdown-blog"> sohnryan django
+            blog project. </a> <br>
+            Theme is a custom version of <a href="https://www.labri.fr/perso/nrougier/">Nicolas P. Rougier personal
+            website</a>.
+        </div>
+    </div>
+</footer>
+</html>

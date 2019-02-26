@@ -1,8 +1,8 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/../main/base.html' %}
 
 {% block content %}
   <nav class="breadcrumb">
-    <a class="breadcrumb-item" href="/">Home</a>
+    <a class="breadcrumb-item" href="/">List</a>
     <span class="breadcrumb-item active">
       {% if request.path == '/post/new/' %}
         New
