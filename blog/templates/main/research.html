@@ -2,11 +2,12 @@
 {% load staticfiles %}
 
 
-
 {% block content %}
     <h1>Research</h1>
     My research focuses on...
-    {% include 'main/research_content.html' %}
+    <div class="post">
+        {% include 'main/research_content.html' %}
+    </div>
     <script>
         {#$("#about").addClass("active")#}
         document.getElementById("research").className += " active"
