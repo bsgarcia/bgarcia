@@ -1,7 +1,12 @@
 #  Variables to modify
+# -------------------------------------------------------------------------------------------------------------
+# The name appearing in the nav bar
 firstname = "b."
 name = "garcia"
+
+# profile pic appearing in the about section (located in blog/static)
 img_about = "img/me.jpeg"
+# descriptive text in the about section
 txt_about = """pellentesque massa. Vestibulum mattis lorem sit amet quam gravida, eget ullamcorper nisl lobortis. Aliquam sed
 enim mattis, mollis sem a, porttitor orci. Nulla convallis ultrices arcu vel pretium. Mauris id leo eget metus
 mollis venenatis vitae eu lacus. Praesent commodo lectus at orci aliquet venenatis. Proin mollis elit nec libero
