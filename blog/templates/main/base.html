@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load var %}
 
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@
 <header class="site-header">
     <div class="wrapper">
         <a class="site-title" href="{% url 'about' %}">
-            b. <strong>garcia</strong>
+            {% param 'firstname' %} <strong> {% param 'name' %} </strong>
         </a>
         <nav class="site-nav">
             <div class="trigger">
